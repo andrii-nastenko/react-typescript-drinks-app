@@ -6,6 +6,6 @@ export interface drinkItem {
     strInstructions?: string
 }
 
-export interface drinksResponse {
+export interface drinks {
     drinks: Array<drinkItem>
 }

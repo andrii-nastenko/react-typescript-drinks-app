@@ -12,6 +12,7 @@
 # misc
 .idea/
 .eslintcache
+debug.log
 .DS_Store
 .env.local
 .env.development.local
