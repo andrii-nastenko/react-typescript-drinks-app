@@ -10,7 +10,7 @@ export const rootReducer = combineReducers({
 
 const sagaMiddleware = createSagaMiddleware()
 
-export const store = createStore(drinksReducer, compose(
+export const store = createStore(rootReducer, compose(
     applyMiddleware(sagaMiddleware),
     composeWithDevTools() ? composeWithDevTools() : (f: () => void) => f
 ))

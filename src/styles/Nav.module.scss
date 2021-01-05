@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  padding: 0 30px;
+  background-color: #000;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &.active {
+      color: #7fff00;
+
+      &:hover {
+        color: #7fff00;
+      }
+    }
+  }
+}

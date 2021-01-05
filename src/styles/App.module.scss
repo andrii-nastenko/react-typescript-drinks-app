@@ -1,1 +1,7 @@
-.container {}
+.container {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+  min-height: 100vh;
+  min-width: 320px;
+  background-color: #8080802D;
+}

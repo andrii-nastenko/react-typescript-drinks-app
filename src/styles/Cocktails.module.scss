@@ -1,0 +1,47 @@
+.container {
+  h2 {
+    text-align: center;
+  }
+
+  .drinksFilter {
+    margin: auto;
+    width: fit-content;
+
+    span {
+      padding: 0 10px;
+    }
+
+    input, label {
+      cursor: pointer;
+    }
+
+    label {
+      margin-left: 5px;
+    }
+  }
+
+  .drinksSection {
+    margin: 20px 10%;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 175px);
+    grid-auto-rows: 250px;
+    grid-gap: 30px;
+
+    .drinkItem {
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 43px;
+        overflow: hidden;
+      }
+
+      img {
+        width: 175px;
+        height: 175px;
+      }
+    }
+  }
+}
