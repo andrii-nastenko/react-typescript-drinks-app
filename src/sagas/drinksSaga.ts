@@ -3,7 +3,7 @@ import {
     isFetching, REQUEST_DETAILS, REQUEST_FILTER_IS_ALCOHOLIC, REQUEST_SEARCH_BY_NAME,
     setDrinkDetails, setDrinksByName, setFilterIsAlcoholic
 } from "../redux/drinksActions";
-import {cocktailsAPI} from "../api/cocktailsAPI";
+import {drinksAPI} from "../api/drinksAPI";
 import {requestDetailsType, requestFilterIsAlcoholicType, requestSearchByNameType} from "../interfaces/actionsType";
 
 export function* drinksWatcher() {
@@ -15,7 +15,7 @@ export function* drinksWatcher() {
 function* filterIsAlcoholicWorker(action: requestFilterIsAlcoholicType) {
     try {
         yield put(isFetching(true))
-        const data = yield call(cocktailsAPI.filterIsAlcoholic, action.isAlcoholic)
+        const data = yield call(drinksAPI.filterIsAlcoholic, action.isAlcoholic)
         yield put(setFilterIsAlcoholic(data))
     } catch (e) {
         alert(e)
@@ -27,7 +27,7 @@ function* filterIsAlcoholicWorker(action: requestFilterIsAlcoholicType) {
 function* searchByNameWorker(action: requestSearchByNameType) {
     try {
         yield put(isFetching(true))
-        const data = yield call(cocktailsAPI.searchByName, action.name)
+        const data = yield call(drinksAPI.searchByName, action.name)
         yield put(setDrinksByName(data))
     } catch (e) {
         alert(e)
@@ -39,7 +39,7 @@ function* searchByNameWorker(action: requestSearchByNameType) {
 function* getDetailsWorker(action: requestDetailsType) {
     try {
         yield put(isFetching(true))
-        const data = yield call(cocktailsAPI.getDetails, action.id)
+        const data = yield call(drinksAPI.getDetails, action.id)
         yield put(setDrinkDetails(data))
     } catch (e) {
         alert(e)

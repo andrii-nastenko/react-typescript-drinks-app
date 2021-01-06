@@ -1,16 +1,17 @@
-import {drinkItem} from "../interfaces/cocktailsType";
+import {drinkItemType} from "../interfaces/drinksApiType";
 import {SET_FILTER_IS_ALCOHOLIC, SET_SEARCH_BY_NAME, SET_DETAILS, IS_FETCHING} from "./drinksActions";
 import {reducerActionsType} from "../interfaces/actionsType";
 
 const initialState = {
-    drinks: [] as drinkItem[],
+    drinks: [] as drinkItemType[],
+    searchResult: [] as drinkItemType[] | null,
     drinkDetails: {
         idDrink: '',
         strDrink: '',
         strDrinkThumb: '',
         strAlcoholic: '',
         strInstructions: ''
-    } as drinkItem,
+    } as drinkItemType,
     isFetching: false
 }
 
@@ -19,7 +20,7 @@ export const drinksReducer = (state = initialState, action: reducerActionsType):
         case IS_FETCHING:
             return {...state, isFetching: action.isFetching}
         case SET_SEARCH_BY_NAME:
-            return {...state, drinks: [...action.drinks]}
+            return {...state, searchResult: action.drinks ? [...action.drinks] : null}
         case SET_FILTER_IS_ALCOHOLIC:
             return {...state, drinks: [...action.drinks]}
         case SET_DETAILS:

@@ -4,8 +4,8 @@ import {NavLink} from "react-router-dom";
 export function Nav() {
     return (
         <nav className={style.container}>
-            <NavLink activeClassName={style.active} exact to={'/'}>Cocktails</NavLink>
-            <NavLink activeClassName={style.active} to={'/details'}>Details</NavLink>
+            <NavLink activeClassName={style.active} exact to={'/'}>Drinks</NavLink>
+            <NavLink activeClassName={style.active} to={'/search'}>Search</NavLink>
         </nav>
     )
 }

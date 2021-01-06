@@ -1,4 +1,4 @@
-# Cocktails catalog
+# Drinks catalog
 
 
 ## Description:

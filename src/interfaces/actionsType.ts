@@ -2,7 +2,7 @@ import {
     SET_DETAILS, SET_FILTER_IS_ALCOHOLIC, IS_FETCHING, SET_SEARCH_BY_NAME,
     REQUEST_SEARCH_BY_NAME, REQUEST_FILTER_IS_ALCOHOLIC, REQUEST_DETAILS
 } from "../redux/drinksActions";
-import {drinkItem} from "./cocktailsType";
+import {drinkItemType} from "./drinksApiType";
 
 export interface isFetchingType {
     type: typeof IS_FETCHING
@@ -16,7 +16,7 @@ export interface requestFilterIsAlcoholicType {
 
 export interface setFilterIsAlcoholicType {
     type: typeof SET_FILTER_IS_ALCOHOLIC
-    drinks: Array<drinkItem>
+    drinks: Array<drinkItemType>
 }
 
 export interface requestSearchByNameType {
@@ -26,7 +26,7 @@ export interface requestSearchByNameType {
 
 export interface setSearchByNameType {
     type: typeof SET_SEARCH_BY_NAME
-    drinks: Array<drinkItem>
+    drinks: Array<drinkItemType>
 }
 
 export interface requestDetailsType {
@@ -36,7 +36,7 @@ export interface requestDetailsType {
 
 export interface setDetailsType {
     type: typeof SET_DETAILS
-    drinkDetails: drinkItem
+    drinkDetails: drinkItemType
 }
 
 export type reducerActionsType =

@@ -1,4 +1,4 @@
-export interface drinkItem {
+export interface drinkItemType {
     idDrink: string
     strDrink: string
     strDrinkThumb: string
@@ -6,6 +6,6 @@ export interface drinkItem {
     strInstructions?: string
 }
 
-export interface drinks {
-    drinks: Array<drinkItem>
+export interface drinksType {
+    drinks: Array<drinkItemType> | null
 }
