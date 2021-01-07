@@ -1,11 +1,15 @@
-import style from '../styles/Cocktails.module.scss';
+import style from '../styles/Drinks.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {stateType} from "../interfaces/stateType";
 import {useEffect, useState} from "react";
 import {requestFilterIsAlcoholic} from "../redux/drinksActions";
 import {DrinksGrid} from "../components/DrinksGrid";
 
-export function Drinks() {
+interface DrinksType {
+    setIsOpen: (modalIsOpen: boolean) => void
+}
+
+export function Drinks({setIsOpen}: DrinksType) {
     const dispatch = useDispatch()
     const state = useSelector((state: stateType) => state.drinks)
     const [isAlcoholic, setIsAlcoholic] = useState(false)
@@ -29,7 +33,7 @@ export function Drinks() {
                     <label htmlFor="alcoholic">Alcoholic</label>
                 </span>
             </section>
-            <DrinksGrid drinks={state.drinks}/>
+            <DrinksGrid drinks={state.drinks} setIsOpen={setIsOpen}/>
         </div>
     )
 }

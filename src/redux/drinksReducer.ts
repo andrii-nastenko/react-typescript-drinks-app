@@ -18,13 +18,27 @@ const initialState = {
 export const drinksReducer = (state = initialState, action: reducerActionsType): typeof initialState => {
     switch (action.type) {
         case IS_FETCHING:
-            return {...state, isFetching: action.isFetching}
+            return {
+                ...state, isFetching: action.isFetching
+            }
         case SET_SEARCH_BY_NAME:
-            return {...state, searchResult: action.drinks ? [...action.drinks] : null}
+            return {
+                ...state, searchResult: action.drinks ? [...action.drinks] : null
+            }
         case SET_FILTER_IS_ALCOHOLIC:
-            return {...state, drinks: [...action.drinks]}
+            return {
+                ...state, drinks: action.drinks ? [...action.drinks] : []
+            }
         case SET_DETAILS:
-            return {...state, drinkDetails: action.drinkDetails}
+            return {
+                ...state, drinkDetails: {
+                    idDrink: action.drinkDetails ? action.drinkDetails[0].idDrink : '',
+                    strDrink: action.drinkDetails ? action.drinkDetails[0].strDrink : '',
+                    strDrinkThumb: action.drinkDetails ? action.drinkDetails[0].strDrinkThumb : '',
+                    strAlcoholic: action.drinkDetails ? action.drinkDetails[0].strAlcoholic : '',
+                    strInstructions: action.drinkDetails ? action.drinkDetails[0].strInstructions : ''
+                }
+            }
         default:
             return state
     }

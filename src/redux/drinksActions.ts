@@ -26,4 +26,4 @@ export const setDrinksByName = (drinks: Array<drinkItemType>): setSearchByNameTy
 export const REQUEST_DETAILS = "REQUEST_DETAILS"
 export const requestDetails = (id: string): requestDetailsType => ({type: REQUEST_DETAILS, id})
 export const SET_DETAILS = "SET_DETAILS"
-export const setDrinkDetails = (drinkDetails: drinkItemType): setDetailsType => ({type: SET_DETAILS, drinkDetails})
+export const setDrinkDetails = (drinkDetails: Array<drinkItemType>): setDetailsType => ({type: SET_DETAILS, drinkDetails})

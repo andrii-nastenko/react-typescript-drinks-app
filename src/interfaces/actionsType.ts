@@ -36,7 +36,7 @@ export interface requestDetailsType {
 
 export interface setDetailsType {
     type: typeof SET_DETAILS
-    drinkDetails: drinkItemType
+    drinkDetails: Array<drinkItemType>
 }
 
 export type reducerActionsType =

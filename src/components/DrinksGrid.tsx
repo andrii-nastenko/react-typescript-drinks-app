@@ -1,7 +1,20 @@
 import style from "../styles/DrinksGrid.module.scss";
-import {drinksType} from "../interfaces/drinksApiType";
+import {drinkItemType, drinksType} from "../interfaces/drinksApiType";
+import {useDispatch} from "react-redux";
+import {requestDetails} from "../redux/drinksActions";
 
-export function DrinksGrid({drinks}: drinksType) {
+interface DrinksGridType extends drinksType {
+    setIsOpen: (modalIsOpen: boolean) => void
+}
+
+export function DrinksGrid({drinks, setIsOpen}: DrinksGridType) {
+    const dispatch = useDispatch()
+
+    const openDetailsHandler = (drink: drinkItemType) => {
+        dispatch(requestDetails(drink.idDrink))
+        setIsOpen(true)
+    }
+
     return (
         <section className={style.drinksSection}>
             {drinks
@@ -9,7 +22,7 @@ export function DrinksGrid({drinks}: drinksType) {
                     return (
                         <div key={item.idDrink} className={style.drinkItem}>
                             <p>{item.strDrink}</p>
-                            <img src={item.strDrinkThumb} alt={item.strDrink}/>
+                            <img src={item.strDrinkThumb} alt={item.strDrink} onClick={() => openDetailsHandler(item)}/>
                         </div>
                     )
                 })

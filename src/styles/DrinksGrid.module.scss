@@ -17,8 +17,13 @@
     }
 
     img {
+      transition: 0.3s ease all;
       width: 175px;
       height: 175px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }
