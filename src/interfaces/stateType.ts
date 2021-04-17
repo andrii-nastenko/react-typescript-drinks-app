@@ -1,4 +1,6 @@
 import {rootReducer} from "../redux/store";
+import {createStore, Store} from 'redux';
 
-type rootReducerType = typeof rootReducer
-export type stateType = ReturnType<rootReducerType>
+type RootState = ReturnType<typeof rootReducer>;
+const store: Store<RootState> = createStore(rootReducer);
+export type stateType = ReturnType<typeof store.getState>;

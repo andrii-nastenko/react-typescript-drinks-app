@@ -15,6 +15,7 @@ export function* drinksWatcher() {
 function* filterIsAlcoholicWorker(action: requestFilterIsAlcoholicType) {
     try {
         yield put(isFetching(true))
+        // @ts-ignore
         const data = yield call(drinksAPI.filterIsAlcoholic, action.isAlcoholic)
         yield put(setFilterIsAlcoholic(data))
     } catch (e) {
@@ -27,6 +28,7 @@ function* filterIsAlcoholicWorker(action: requestFilterIsAlcoholicType) {
 function* searchByNameWorker(action: requestSearchByNameType) {
     try {
         yield put(isFetching(true))
+        // @ts-ignore
         const data = yield call(drinksAPI.searchByName, action.name)
         yield put(setDrinksByName(data))
     } catch (e) {
@@ -39,6 +41,7 @@ function* searchByNameWorker(action: requestSearchByNameType) {
 function* getDetailsWorker(action: requestDetailsType) {
     try {
         yield put(isFetching(true))
+        // @ts-ignore
         const data = yield call(drinksAPI.getDetails, action.id)
         yield put(setDrinkDetails(data))
     } catch (e) {

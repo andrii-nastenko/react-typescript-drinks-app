@@ -1,19 +1,32 @@
-import ReactDOM from 'react-dom';
-import {StrictMode} from "react";
+import {createRoot} from 'react-dom/client';
+import {StrictMode} from 'react';
 import 'normalize.css';
 import './styles/index.scss';
 import {App} from './App';
-import {Provider} from "react-redux";
-import {store} from "./redux/store";
-import {BrowserRouter} from "react-router-dom";
+import {Provider} from 'react-redux';
+import {store} from './redux/store';
+import {BrowserRouter} from 'react-router-dom';
 
-ReactDOM.render(
-    <StrictMode>
-        <Provider store={store}>
-            <BrowserRouter>
-                <App/>
-            </BrowserRouter>
-        </Provider>
-    </StrictMode>,
-    document.getElementById('root')
-)
+const root = document.getElementById('root');
+
+const getBasename = () => {
+    if (window.location.hostname === 'andrii-nastenko.github.io') {
+        return '/react-typescript-drinks-app/';
+    }
+    return '/';
+};
+
+if (root) {
+    const appRoot = createRoot(root);
+    appRoot.render(
+        <StrictMode>
+            <Provider store={store}>
+                <BrowserRouter basename={getBasename()}>
+                    <App/>
+                </BrowserRouter>
+            </Provider>
+        </StrictMode>
+    );
+} else {
+    console.error('Root element not found. Make sure there is an element with id "root" in your HTML.');
+}

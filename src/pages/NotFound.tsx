@@ -5,7 +5,7 @@ export function NotFound() {
     return (
         <div className={style.container}>
             <p>Page was not found :(</p>
-            <NavLink exact to={'/'}>
+            <NavLink to={'/'}>
                 <button>
                     Back
                 </button>
