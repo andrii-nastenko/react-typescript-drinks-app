@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-typescript-drinks-app/static/css/main.9ae5e6f6.css",
+    "main.js": "/react-typescript-drinks-app/static/js/main.3a5d491f.js",
+    "index.html": "/react-typescript-drinks-app/index.html",
+    "main.9ae5e6f6.css.map": "/react-typescript-drinks-app/static/css/main.9ae5e6f6.css.map",
+    "main.3a5d491f.js.map": "/react-typescript-drinks-app/static/js/main.3a5d491f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ae5e6f6.css",
+    "static/js/main.3a5d491f.js"
+  ]
+}
